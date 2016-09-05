@@ -17,6 +17,10 @@ public class NumberManager {
 	}
 	//ÅÅ¶Ó´°¿ÚÈ¡ºÅ
 	public synchronized Integer fetchServiceNumber(){
-		return queueNumber.remove(0);
+		Integer number = null;
+		if(queueNumber.size()>0){
+			number = queueNumber.remove(0);
+		}
+		return number;
 	}
 }
