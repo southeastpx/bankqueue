@@ -11,12 +11,12 @@ public class NumberManager {
 	private int lastNumber = 1;
 	private List<Integer> queueNumber = new ArrayList<Integer>();
 	//生成号码给客户
-	public synchronized int generateNewNumber(){
+	public synchronized Integer generateNewNumber(){
 		queueNumber.add(lastNumber);
 		return lastNumber++;
 	}
 	//排队窗口取号
-	public synchronized int fetchServiceNumber(){
+	public synchronized Integer fetchServiceNumber(){
 		return queueNumber.remove(0);
 	}
 }
